@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  nav(class="navbar navbar-light navbar-expand-md")
+    div(class="container-fluid")
+      a(class="navbar-brand", href="#")
+        strong SBR
+      button(data-toggle="collapse", class="navbar-toggler", data-target="#navcol-1")
+        span(class="sr-only") Toggle navigation
+        span(class="navbar-toggler-icon")
+      div(class="collapse navbar-collapse", id="navcol-1")
+        ul(class="nav navbar-nav")
+          li(class="nav-item", role="presentation")
+            a(class="nav-link", href="login") Login
+          li(class="nav-item", role="presentation")
+            a(class="nav-link active", href="/register") Register
+
+  div(class="container")
+    form(method="GET", action="/api/register")
+      label Email Address
+      input.form-control(name="username", placeholder="Email Address", type="text", id="email")
+      label Password
+      input.form-control(name="password" placeholder="Password", type="password", id="password")
+      label Confirm Password
+      input.form-control(name="confirmPass" placeholder="Confrim Password", type="password", id="confirmPass")
+      button(class="btn btn-primary", value="Register", type="submit") Register

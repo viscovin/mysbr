@@ -1,0 +1,124 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+*/
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Quicksand";
+}
+
+h2 {
+  color:#4d4d4d;
+}
+
+body{
+  margin: 0px;
+  background-size: auto;
+  text-align: center;
+  background-image: url(list.jpg);
+  color: white;
+}
+
+.containerTable {
+  position: relative;
+  height: 30 rem;
+  background: transparent;
+  color: white;
+  font-weight:bolder;
+  padding-left: 300px;
+}
+
+.container {
+  position: relative;
+  height: 30 rem;
+  background: transparent;
+  color: white;
+  font-weight:bolder;
+  padding-top: 30px;
+}
+
+
+table {
+  background: transparent;
+  color: white;
+  border-collapse: collapse;
+  width: 75%;
+	color: white; 
+  padding-left: 280px;
+}
+
+td, th 
+{
+  padding: 5px 10px;        
+}
+
+tr:nth-child(even) {
+  background-color: #4d4d4d;
+}
+
+input{
+  padding-top: 10px;
+}
+
+input[type=text], select {
+  width: 50%;
+	padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 50%;
+	padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input[type=date], select {
+  width: 50%;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #3b4abf;
+  font-weight: bolder;
+	color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #00004b;
+}
+
+input[type=button] {
+  background-color: #3b4abf;
+  font-weight: bolder;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type=button]:hover {
+  background-color: #00004b;
+}

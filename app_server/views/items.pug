@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  nav(class="navbar navbar-light navbar-expand-md")
+    div(class="container-fluid")
+      a(class="navbar-brand", href="#")
+        strong SBR
+      button(data-toggle="collapse", class="navbar-toggler", data-target="#navcol-1")
+        span(class="sr-only") Toggle navigation
+        span(class="navbar-toggler-icon")
+      div(class="collapse navbar-collapse", id="navcol-1")
+        ul(class="nav navbar-nav")
+          li(class="nav-item", role="presentation")
+            a(class="nav-link", href="/login") Login
+          li(class="nav-item", role="presentation")
+            a(class="nav-link active", href="/lists") My Lists
+
+  div(class="container")
+    each item in items
+      div(class="row")
+        div(class="col align-self-center")
+          h2!= item.item_name
+        div(class="col align-self-center")
+          button(class="btn btn-primary delete", type="button", value=`${item.iid}`) Delete
+
+    div(class="row")
+      div(class="col align-self-center")
+        input(type="text", id='new_item')
+      div(class="col align-self-center")
+        button(class="btn btn-primary", type="button", id='savebtn') Save
+        button(class="btn btn-primary", type="button", id='clearbtn') Clear
+
+  script.
+    deleteButtons = document.querySelectorAll("button.delete");
+    deleteButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        iid = button.getAttribute("value");
+        fetch(`/api/items/${iid}`, {
+          method: 'DELETE'
+        }).then(response => {
+          window.location.reload();
+        });
+      });
+    });
+
+    savebtn = document.getElementById("savebtn");
+    newitemfield = document.getElementById("new_item");
+    savebtn.addEventListener('click', function() {
+      fetch(`/api/lists/!{lid}`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({item_name: newitemfield.value})
+      }).then(response => {
+        window.location.reload();
+      });
+    });
+
+    clearbtn = document.getElementById("clearbtn");
+    clearbtn.addEventListener('click', function() {
+      newitemfield.value = "";
+    });

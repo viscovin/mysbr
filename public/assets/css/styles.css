@@ -1,0 +1,27 @@
+body {
+  background-image: url(list.jpg);
+  background-size: cover;
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-position:0px 55px;
+  color: white; 
+  position: relative;
+}
+
+button {
+	margin-top: 10px; 
+	margin-left: 3px; 
+}
+
+form {
+	margin-top: 15px;
+    width: 50%; 
+}
+
+div.alert {
+	margin-top: 15px;
+	margin-left: 80px; 
+    width: 43%; 
+	font-weight: bold;
+}
+	
